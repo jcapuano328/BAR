@@ -33,5 +33,9 @@ public class MoraleLevel {
     public void setLow(int low) {
         this.low = low;
     }
+    
+	public boolean isWithin(int i) {
+		return i >= this.low && i <= this.high;
+	}
 }
 
