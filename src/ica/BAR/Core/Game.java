@@ -128,5 +128,20 @@ public class Game {
             return phases[phases.length-1];
         return phases[phase];
     }
+
+    public int getInitiativeModifier(int level) {
+		if (levels.get(0).isWithin(level)) return 1;
+		if (levels.get(1).isWithin(level)) return 0;
+		if (levels.get(2).isWithin(level)) return 1;
+		return 0;
+	}
+
+	public int getMoraleModifier(int level) {
+		if (levels.get(0).isWithin(level)) return 0;
+		if (levels.get(0).isWithin(level)) return -1;
+		if (levels.get(0).isWithin(level)) return -2;
+		return 0;
+	}
+
     
 }

@@ -1,6 +1,5 @@
 package ica.BAR;
 
-
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.FragmentTransaction;

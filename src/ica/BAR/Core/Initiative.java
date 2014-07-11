@@ -4,7 +4,6 @@ public class Initiative {
 	private static final String cBritish = "British";
 	private static final String cAmerican = "American";
 	
-
 	public Initiative() {
 	}
 

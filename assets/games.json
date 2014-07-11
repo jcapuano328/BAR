@@ -2,7 +2,7 @@
 	{
     	"id": 1,
     	"name": "Saratoga",
-    	"description": "Turning Point of the Revolution",
+    	"desc": "Turning Point of the Revolution",
         "image": "saratoga",
         "volume": 1,
         "turns": 12,
@@ -31,7 +31,7 @@
 	{
     	"id": 2,
     	"name": "Brandywine",
-    	"description": "One Bold Stroke",
+    	"desc": "One Bold Stroke",
         "image": "brandywine",
         "volume": 2,
         "turns": 12,
@@ -60,7 +60,7 @@
 	{
     	"id": 3,
     	"name": "Guilford Courthouse",
-    	"description": "High Water Mark of the Southern Campaign",
+    	"desc": "High Water Mark of the Southern Campaign",
         "image": "guilford",
         "volume": 3,
         "turns": 13,
@@ -89,7 +89,7 @@
 	{
     	"id": 4,
     	"name": "Eutaw Springs",
-    	"description": "",
+    	"desc": "",
         "image": "guilford",
         "volume": 3.1,
         "turns": 10,
@@ -118,7 +118,7 @@
 	{
     	"id": 5,
     	"name": "Monmouth Courthouse",
-    	"description": "The Longest Battle",
+    	"desc": "The Longest Battle",
         "image": "monmouth",
         "volume": 5,
         "turns": 14,
@@ -147,7 +147,7 @@
 	{
     	"id": 6,
     	"name": "Germantown",
-    	"description": "Washington Strikes Back!",
+    	"desc": "Washington Strikes Back!",
         "image": "germantown",
         "volume": 7,
         "turns": 10,
@@ -176,7 +176,7 @@
 	{
     	"id": 7,
     	"name": "Newtown",
-    	"description": "Battles with the Iroquis Confederacy",
+    	"desc": "Battles with the Iroquis Confederacy",
         "image": "newtown",
         "volume": 8,
         "turns": 12,
@@ -205,7 +205,7 @@
 	{
     	"id": 8,
     	"name": "Oriskany",
-    	"description": "Battles with the Iroquis Confederacy",
+    	"desc": "Battles with the Iroquis Confederacy",
         "image": "newtown",
         "volume": 8.1,
         "turns": 14,

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/layoutBritishMomentum"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1.0">
+        <TextView
+            android:text="British"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".40"
+            android:id="@+id/txtBritish"
+            style="@style/group_text" />
+        <Button
+            android:id="@+id/btnBritishMomentumPrev"
+            android:text="-"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".15"
+            android:background="@drawable/blue_button"
+            style="@style/button_text" />
+        <EditText
+            android:id="@+id/editBritishMomentum"
+            android:inputType="numberDecimal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/btnBritishMomentumPrev"
+            android:layout_alignTop="@+id/btnBritishMomentumPrev"
+            android:layout_weight=".30"
+            android:gravity="center" />
+        <Button
+            android:id="@+id/btnBritishMomentumNext"
+            android:text="+"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".15"
+            android:layout_alignTop="@+id/btnBritishMomentumPrev"
+            android:layout_toRightOf="@+id/editBritishMomentum"
+            android:background="@drawable/blue_button"
+            style="@style/button_text" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutAmericanMomentum"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1.0">
+        
+        <TextView
+            android:text="American"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".40"
+            android:id="@+id/txtAmerican"
+            style="@style/group_text" />
+            
+        <Button
+            android:id="@+id/btnAmericanMomentumPrev"
+            android:text="-"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".15"
+            android:background="@drawable/blue_button"
+            style="@style/button_text" />
+        <EditText
+            android:id="@+id/editAmericanMomentum"
+            android:inputType="numberDecimal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/btnAmericanMomentumPrev"
+            android:layout_alignTop="@+id/btnAmericanMomentumPrev"
+            android:layout_weight=".30"
+            android:gravity="center" />
+        <Button
+            android:id="@+id/btnAmericanMomentumNext"
+            android:text="+"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".15"
+            android:layout_alignTop="@+id/btnAmericanMomentumPrev"
+            android:layout_toRightOf="@+id/editAmericanMomentum"
+            android:background="@drawable/blue_button"
+            style="@style/button_text" />
+    </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/layoutInitiativeDice"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:weightSum="1.0"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+        <ImageView
+            android:id="@+id/imgInitiativeDie1"
+            android:src="@drawable/whiteb1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.15"
+            android:layout_gravity="center"
+            android:clickable="true" />
+        <ImageView
+            android:id="@+id/imgInitiativeDie2"
+            android:src="@drawable/redw1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.15"
+            android:layout_gravity="center"
+            android:layout_toRightOf="@+id/imgInitiativeDie1"
+            android:clickable="true" />
+        <Button
+            android:id="@+id/btnInitiativeDiceRoll"
+            android:text="Roll"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".25"
+            android:layout_alignTop="@+id/imgInitiativeDie1"
+            android:layout_toRightOf="@+id/imgInitiativeDie2"
+            android:background="@drawable/red_button"
+            style="@style/button_text" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/layoutInitiativeResults"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1.0"
+        android:paddingTop="10dp">
+        <TextView
+            android:text="Results"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".20"
+            android:id="@+id/lblInitiativeResults"
+            android:layout_gravity="center_vertical" />
+        <TextView
+            android:text="2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".80"
+            android:layout_toRightOf="@+id/lblInitiativeResults"
+            android:id="@+id/txtInitiativeResults"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textAppearance="@android:style/TextAppearance.Large"/>
+    </LinearLayout>
+              
+</LinearLayout>

@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.util.Log;
 
+import ica.BAR.InitiativeFragment;
 /*
 import ica.BAR.BarrageFragment;
 import ica.BAR.CombatFragment;
@@ -21,10 +22,10 @@ public class TabsPagerAdapter extends FragmentPagerAdapter {
 	@Override
 	public Fragment getItem(int index) {
 
-        /*
 		switch (index) {
 		case 0:
-            return new BarrageFragment();
+            return new InitiativeFragment();
+        /*
 		case 1:
             return new CombatFragment();
 		case 2:
@@ -41,8 +42,8 @@ public class TabsPagerAdapter extends FragmentPagerAdapter {
             return new VictoryFragment();
 		case 3:
             return new VictoryFragment();
-		}
         */
+		}
         
 		return new Fragment();
 	}
@@ -50,7 +51,7 @@ public class TabsPagerAdapter extends FragmentPagerAdapter {
 	@Override
 	public int getCount() {
 		// get item count - equal to number of tabs
-		return 4;
+		return 5;
 	}
 
 }
