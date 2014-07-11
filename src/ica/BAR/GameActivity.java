@@ -65,7 +65,7 @@ public class GameActivity extends FragmentActivity implements ActionBar.TabListe
 
         // tabs
 		viewPager = (ViewPager) findViewById(R.id.gameViews);
-		mAdapter = new TabsPagerAdapter(getSupportFragmentManager(), (game.hasCustom() ? game.getCustom().getClassName() : ""));
+		mAdapter = new TabsPagerAdapter(getSupportFragmentManager());
 		viewPager.setAdapter(mAdapter);
 
         actionBar = getActionBar();
@@ -78,16 +78,9 @@ public class GameActivity extends FragmentActivity implements ActionBar.TabListe
         actionBar.setIcon(resid);
 
 		// Adding Tabs
-        String[] tabs = { "Barrage", "Combat", "Custom", "Victory" };
-        if (game.hasCustom()) {
-            tabs[2] = game.getCustom().getImageName().toUpperCase();
-        }
-		//for (String tab_name : tabs) {
-		for (int i=0; i<tabs.length; i++) {
-            if (i != 2 || game.hasCustom()) {
-                String tab_name = tabs[i];
-			    actionBar.addTab(actionBar.newTab().setText(tab_name).setTabListener(this));
-            }
+        String[] tabs = { "Initiative", "Fire", "Melee", "Morale", "Victory" };
+		for (String tab_name : tabs) {
+            actionBar.addTab(actionBar.newTab().setText(tab_name).setTabListener(this));
 		}
         
 		btnTurnPrev.setOnClickListener(new OnClickListener() {
@@ -317,34 +310,6 @@ public class GameActivity extends FragmentActivity implements ActionBar.TabListe
             return false;
         }
     }                
-    
-    /*
-        if (game.hasCustom()) {
-            btnCustom.setVisibility(View.VISIBLE);	
-            
-            int id = getApplicationContext().getResources().getIdentifier("drawable/" + game.getCustom().getImageName(), null, getApplicationContext().getPackageName());
-            btnCustom.setImageResource(id);
-		    btnCustom.setOnClickListener(new OnClickListener() {
-                @Override
-                public void onClick(View arg0) {
-                    try {
-                        String className = game.getCustom().getClassName();
-                        if (!className.isEmpty()) {
-                            Intent customDetail = new Intent (me, Class.forName("ica.BAR." + className));
-                            customDetail.putExtra("Game", game.getId());
-                            startActivity (customDetail);
-                        }
-                    }
-                    catch (Exception ex) {
-                        Log.e("Custom Activity", "Failed to launch custom activity", ex);
-                    }
-                }
-            });
-        }
-        else {
-            btnCustom.setVisibility(View.INVISIBLE);	
-        }
-    */
     
     private void prevTurn() {
 		Bar.prevTurn(game, saved);
