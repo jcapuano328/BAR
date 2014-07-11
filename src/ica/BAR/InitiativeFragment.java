@@ -59,7 +59,7 @@ public class InitiativeFragment extends Fragment {
         }
         else {
             initiative = new Initiative();
-		    dice = new Dice(2, 1, 6);
+		    dice = new Dice(2, 0, 9);
 		    audio = new PlayAudio (getActivity());
             
             Intent intent = getActivity().getIntent();

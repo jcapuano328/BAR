@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.util.Log;
 
 import ica.BAR.InitiativeFragment;
+import ica.BAR.FireFragment;
 /*
 import ica.BAR.BarrageFragment;
 import ica.BAR.CombatFragment;
@@ -25,9 +26,10 @@ public class TabsPagerAdapter extends FragmentPagerAdapter {
 		switch (index) {
 		case 0:
             return new InitiativeFragment();
-        /*
+
 		case 1:
-            return new CombatFragment();
+            return new FireFragment();
+        /*
 		case 2:
             if (!customClassName.isEmpty()) {
                 try {

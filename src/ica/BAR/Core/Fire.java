@@ -1,5 +1,7 @@
 package ica.BAR.Core;
 
+import java.util.*;
+
 public class Fire {
 	private int [][] hittable = { 
         {7,6,4,2,1},    // range 1
@@ -23,42 +25,55 @@ public class Fire {
 		new FireResult(7,8,"1"),
 		new FireResult(9,99,"1*")
     };        
-	private static Modifier[] modifiers = {
-	    new Modifier("Forest / Lt Forest", -1),					
-	    new Modifier("Orchard", -1),
-	    new Modifier("Blackjack", -1),
-	    new Modifier("Lt Infantry", -1),
-	    new Modifier("Arty / Dragoons", +1),
-	    new Modifier("First Volley", +1),
-	    new Modifier("Ferguson's Rifles", +1),
-	    new Modifier("Fieldworks", -1),
-	    new Modifier("Meeting House", -2),
-	    new Modifier("Guilford CH", -1),
-	    new Modifier("McCuiston PH", -1),
-	    new Modifier("Wantoot PH", -2),
-	    new Modifier("Santee River", +1)
-    };
+	private static ArrayList<Modifier> modifiers = new ArrayList<Modifier>() {{
+	    add(new Modifier("Forest / Lt Forest", -1));
+	    add(new Modifier("Orchard", -1));
+	    add(new Modifier("Blackjack", -1));
+	    add(new Modifier("Lt Infantry", -1));
+	    add(new Modifier("Arty / Dragoons", +1));
+	    add(new Modifier("First Volley", +1));
+	    add(new Modifier("Ferguson's Rifles", +1));
+	    add(new Modifier("Fieldworks", -1));
+	    add(new Modifier("Meeting House", -2));
+	    add(new Modifier("Guilford CH", -1));
+	    add(new Modifier("McCuiston PH", -1));
+	    add(new Modifier("Wantoot PH", -2));
+	    add(new Modifier("Santee River", +1));
+    }};
 
 	public Fire() {
 	}
 	
-	public static String[] getSPs() {
-        return new String[] {"1","2","3-5","6-9","10+"};
+	public static ArrayList<String> getTypes() {
+        return new ArrayList<String>() {{
+            add("Rifle v Other");
+            add("Rifle v Arty");
+            add("Arty v All");
+        }};
 	}
 	
-	public static String[] getRange() {
-        return new String[] {"Adjacent","2-3 hexes"};
+	public static ArrayList<String> getSPs() {
+        return new ArrayList<String>() {{
+            add("1");
+            add("2");
+            add("3-5");
+            add("6-9");
+            add("10+");
+        }};
 	}
 	
-	public static String[] getType() {
-        return new String[] {"Rifle v Other","Rifle v Arty","Arty v All"};
+	public static ArrayList<String> getRanges() {
+        return new ArrayList<String>() {{
+            add("Adjacent");
+            add("2-3 hexes");
+        }};
 	}
 	
-	public static Modifier[] getModifiers() {
+	public static ArrayList<Modifier> getModifiers() {
         return modifiers;
     }
             
-	public String resolve(int hitdie, int damagedie, int spsindex, int typeindex, int rangeindex, String[] hitdrms) {
+	public String resolve(int hitdie, int damagedie, int spsindex, int typeindex, int rangeindex, List<Modifier> hitdrms) {
 		if (isHit(hitdie, hitdrms, spsindex, rangeindex)) {
 			try {
                 FireResult[] results = getResultTable(typeindex);
@@ -74,11 +89,11 @@ public class Fire {
         return "Miss";
 	}
 
-	private boolean isHit(int die, String[] hitdrms, int spsindex, int rangeindex) {
+	private boolean isHit(int die, List<Modifier> hitdrms, int spsindex, int rangeindex) {
 		try {
 			int hitdrm = 0;
-			for (String s : hitdrms)
-				hitdrm += Modifier.getModifierValue(s, modifiers);
+			for (Modifier drm : hitdrms)
+				hitdrm += drm.Value;
 				
 			return ((die+hitdrm) >= hittable[rangeindex][spsindex]);
 		} 
