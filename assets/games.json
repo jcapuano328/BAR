@@ -23,7 +23,7 @@
             	"low": 1
             }
         ],
-    	"startDateTime": "1777-09-19T12:00:00.000Z",
+    	"startDateTime": "1777-09-19T12:00:00Z",
     	"startBritishMorale": 14,
         "startAmericanMorale": 14,
         "startFrenchMorale": 0
@@ -52,7 +52,7 @@
             	"low": 1
             }
         ],
-        "startDateTime": "1777-09-11T12:00:00.000Z",
+        "startDateTime": "1777-09-11T12:00:00Z",
     	"startBritishMorale": 20,
         "startAmericanMorale": 20,
         "startFrenchMorale": 0
@@ -81,7 +81,7 @@
             	"low": 1
             }
         ],
-    	"startDateTimeMorale": "1781-03-15T10:00:00.000Z",
+    	"startDateTimeMorale": "1781-03-15T10:00:00Z",
     	"startBritishMorale": 14,
         "startAmericanMorale": 14,
         "startFrenchMorale": 0
@@ -110,7 +110,7 @@
             	"low": 1
             }
         ],
-        "startDateTime": "1781-09-08T11:00:00.000Z",
+        "startDateTime": "1781-09-08T11:00:00Z",
     	"startBritishMorale": 13,
         "startAmericanMorale": 14,
         "startFrenchMorale": 0
@@ -139,7 +139,7 @@
             	"low": 1
             }
         ],
-        "startDateTime": "1778-06-28T10:00:00.000Z",
+        "startDateTime": "1778-06-28T10:00:00Z",
         "startBritishMorale": 20,
         "startAmericanMorale": 20,
         "startFrenchMorale": 0
@@ -168,7 +168,7 @@
             	"low": 1
             }
         ],
-        "startDateTime": "1777-10-04T09:20:00.000Z",
+        "startDateTime": "1777-10-04T09:20:00Z",
         "startBritishMorale": 14,
         "startAmericanMorale": 13,
         "startFrenchMorale": 0
@@ -197,7 +197,7 @@
             	"low": 1
             }
         ],
-        "startDateTime": "1779-08-29T12:00:00.000Z",
+        "startDateTime": "1779-08-29T12:00:00Z",
         "startBritishMorale": 13,
         "startAmericanMorale": 14,
         "startFrenchMorale": 0
@@ -226,7 +226,7 @@
             	"low": 1
             }
         ],
-        "startDateTime": "1777-08-6T12:00:00.000Z",
+        "startDateTime": "1777-08-6T12:00:00Z",
         "startBritishMorale": 14,
         "startAmericanMorale": 14,
         "startFrenchMorale": 0

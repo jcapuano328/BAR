@@ -94,8 +94,9 @@ public class Bar {
         Calendar start = game.getStartDateTime();
         start.add(Calendar.HOUR, turn);
 
-        SimpleDateFormat tft = new SimpleDateFormat ("kk:mm");
-        return tft.format(start);
+        //SimpleDateFormat tft = new SimpleDateFormat ("kk:mm");
+        SimpleDateFormat tft = new SimpleDateFormat ("MMMM d, yyyy hh:mm a");
+        return tft.format(start.getTime());
     }
     
     public static void prevPhase(Game game, Saved saved) {

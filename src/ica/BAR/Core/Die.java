@@ -40,16 +40,20 @@ public class Die {
         value = i;
 	}
 	
-	public int increment(boolean rollover)
-	{
+	public int increment() {
+        return increment(true);
+    }
+	public int increment(boolean rollover) {
         if (++value > rangehigh) {
             value = rollover ? rangelow : rangehigh;
         }
 		return value;
 	}
 	
-	public int decrement(boolean rollover)
-	{
+	public int decrement() {
+        return decrement(true);
+    }
+	public int decrement(boolean rollover) {
         if (--value < rangelow) {
             value = rollover ? rangehigh : rangelow;
         }

@@ -3,7 +3,6 @@ package ica.BAR;
 import android.support.v4.app.Fragment;
 //import android.app.Fragment;
 import android.content.*;
-import android.database.DataSetObserver;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -32,7 +31,6 @@ public class FireFragment extends Fragment {
     private Spinner spinFireRange;
     
     private ListView listModifiers;
-    private ModifierListItemAdapter adapterModifiers;
     
 	private ImageView imgFireDie1;
 	private ImageView imgFireDie2;
@@ -119,20 +117,26 @@ public class FireFragment extends Fragment {
                 }
             });            
 
-            adapterModifiers = new ModifierListItemAdapter(getActivity().getApplicationContext(), modifiers);
-            adapterModifiers.registerDataSetObserver(new DataSetObserver() {
+            listModifiers.setAdapter(new ModifierListItemAdapter(getActivity().getApplicationContext(), modifiers));
+            listModifiers.setOnItemClickListener( new AdapterView.OnItemClickListener() {
                 @Override
-                public void onChanged() {
-                    super.onChanged();
-                    updateResults();
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    Modifier mod = modifiers.get(position);
+                    if (mod.Count > 0) {
+                        mod.Count = 0;
+                    }
+                    else {
+                        mod.Count = 1;
+                    }
+			        updateResults();
                 }
             });
-            listModifiers.setAdapter(adapterModifiers);
-
+                        
 		    imgFireDie1.setOnClickListener(new OnClickListener() {
 			    @Override
 			    public void onClick(View arg0) {
-			        incrementDie(1);
+                    dice.increment(1);
+                    dice.increment(1);
 			        displayDice();
 			        updateResults();
 			    }
@@ -140,7 +144,7 @@ public class FireFragment extends Fragment {
 		    imgFireDie2.setOnClickListener(new OnClickListener() {
 			    @Override
 			    public void onClick(View arg0) {
-			        incrementDie(2);
+                    dice.increment(1);
 			        displayDice();
 			        updateResults();
 			    }
@@ -191,11 +195,5 @@ public class FireFragment extends Fragment {
 	void displayDice() {
 		imgFireDie1.setImageResource(DiceResources.getWhiteBlack(dice.getDie(0)));
 		imgFireDie2.setImageResource(DiceResources.getRedWhite(dice.getDie(1)));
-	}
- 
-	void incrementDie(int die) {
-		int value = dice.getDie(die-1);
-		if (++value > 6) value = 1;
-		dice.setDie(die-1, value);
 	}
 }

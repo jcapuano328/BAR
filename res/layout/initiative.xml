@@ -98,7 +98,7 @@
         android:paddingBottom="10dp">
         <ImageView
             android:id="@+id/imgInitiativeDie1"
-            android:src="@drawable/whiteb1"
+            android:src="@drawable/whiteb10_0"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.15"
@@ -106,7 +106,7 @@
             android:clickable="true" />
         <ImageView
             android:id="@+id/imgInitiativeDie2"
-            android:src="@drawable/redw1"
+            android:src="@drawable/redw10_0"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.15"

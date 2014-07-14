@@ -30,6 +30,20 @@ public class Dice {
 		return null;
 	}
     
+    public int increment(int die) {
+        Die d = getDieItem(die);
+        if (d != null)
+            return d.increment();
+        return die;            
+    }
+    
+    public int decrement(int die) {
+        Die d = getDieItem(die);
+        if (d != null)
+            return d.decrement();
+        return die;            
+    }
+    
 	public int getSize() {
         return dice.size();
 	}

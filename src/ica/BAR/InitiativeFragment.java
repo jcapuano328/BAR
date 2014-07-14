@@ -147,7 +147,7 @@ public class InitiativeFragment extends Fragment {
 		    imgInitiativeDie1.setOnClickListener(new OnClickListener() {
 			    @Override
 			    public void onClick(View arg0) {
-			        incrementDie(1);
+                    dice.increment(1);
 			        displayDice();
 			        updateResults();
 			    }
@@ -155,7 +155,7 @@ public class InitiativeFragment extends Fragment {
 		    imgInitiativeDie2.setOnClickListener(new OnClickListener() {
 			    @Override
 			    public void onClick(View arg0) {
-			        incrementDie(2);
+                    dice.increment(2);
 			        displayDice();
 			        updateResults();
 			    }
@@ -187,12 +187,6 @@ public class InitiativeFragment extends Fragment {
 		imgInitiativeDie2.setImageResource(DiceResources.getRedWhite(dice.getDie(1)));
 	}
  
-	void incrementDie(int die) {
-		int value = dice.getDie(die-1);
-		if (++value > 6) value = 1;
-		dice.setDie(die-1, value);
-	}
-    
 	int getBritishMomentum() {
         String v = editBritishMomentum.getText().toString();
         if (!v.isEmpty())
