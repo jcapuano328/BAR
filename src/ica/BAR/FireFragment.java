@@ -3,6 +3,7 @@ package ica.BAR;
 import android.support.v4.app.Fragment;
 //import android.app.Fragment;
 import android.content.*;
+import android.database.DataSetObserver;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -31,9 +32,10 @@ public class FireFragment extends Fragment {
     private Spinner spinFireRange;
     
     private ListView listModifiers;
+    private ModifierListItemAdapter adapterModifiers;
     
-	private ImageView imgFireDie1;
-	private ImageView imgFireDie2;
+	private TextView imgFireDie1;
+	private TextView imgFireDie2;
 	private Button btnFireDiceRoll;
 
 	private TextView txtFireResults;
@@ -77,8 +79,8 @@ public class FireFragment extends Fragment {
     
             listModifiers = (ListView)rootView.findViewById(R.id.listFireModifiers);
         
-		    imgFireDie1 = (ImageView)rootView.findViewById(R.id.imgFireDie1);
-		    imgFireDie2 = (ImageView)rootView.findViewById(R.id.imgFireDie2);
+		    imgFireDie1 = (TextView)rootView.findViewById(R.id.imgFireDie1);
+		    imgFireDie2 = (TextView)rootView.findViewById(R.id.imgFireDie2);
 		    btnFireDiceRoll = (Button)rootView.findViewById(R.id.btnFireDiceRoll);
 
             txtFireResults = (TextView)rootView.findViewById(R.id.txtFireResults);
@@ -117,26 +119,20 @@ public class FireFragment extends Fragment {
                 }
             });            
 
-            listModifiers.setAdapter(new ModifierListItemAdapter(getActivity().getApplicationContext(), modifiers));
-            listModifiers.setOnItemClickListener( new AdapterView.OnItemClickListener() {
+            adapterModifiers = new ModifierListItemAdapter(getActivity().getApplicationContext(), modifiers);
+            adapterModifiers.registerDataSetObserver(new DataSetObserver() {
                 @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Modifier mod = modifiers.get(position);
-                    if (mod.Count > 0) {
-                        mod.Count = 0;
-                    }
-                    else {
-                        mod.Count = 1;
-                    }
-			        updateResults();
+                public void onChanged() {
+                    super.onChanged();
+                    updateResults();
                 }
             });
-                        
+            listModifiers.setAdapter(adapterModifiers);
+
 		    imgFireDie1.setOnClickListener(new OnClickListener() {
 			    @Override
 			    public void onClick(View arg0) {
-                    dice.increment(1);
-                    dice.increment(1);
+                    dice.increment(0);
 			        displayDice();
 			        updateResults();
 			    }
@@ -193,7 +189,7 @@ public class FireFragment extends Fragment {
     }
     
 	void displayDice() {
-		imgFireDie1.setImageResource(DiceResources.getWhiteBlack(dice.getDie(0)));
-		imgFireDie2.setImageResource(DiceResources.getRedWhite(dice.getDie(1)));
+        imgFireDie1.setText(Integer.toString(dice.getDie(0)));
+        imgFireDie2.setText(Integer.toString(dice.getDie(1)));
 	}
 }

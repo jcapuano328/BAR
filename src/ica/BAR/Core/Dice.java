@@ -2,9 +2,6 @@ package ica.BAR.Core;
 
 import java.util.*;
 
-/**
- * Created by jcapuano on 5/16/2014.
- */
 public class Dice {
 	private ArrayList<Die> dice = new ArrayList<Die>();
 
@@ -30,20 +27,6 @@ public class Dice {
 		return null;
 	}
     
-    public int increment(int die) {
-        Die d = getDieItem(die);
-        if (d != null)
-            return d.increment();
-        return die;            
-    }
-    
-    public int decrement(int die) {
-        Die d = getDieItem(die);
-        if (d != null)
-            return d.decrement();
-        return die;            
-    }
-    
 	public int getSize() {
         return dice.size();
 	}
@@ -62,6 +45,20 @@ public class Dice {
 		dice.clear();
 	}
     
+	public int increment(int die) {
+		Die d = getDieItem(die);
+		if (d != null)
+			return d.increment();
+		return -1;		
+	}
+
+	public int decrement(int die) {
+		Die d = getDieItem(die);
+		if (d != null)
+			return d.decrement();
+		return -1;		
+	}
+	
 	public void roll() {
 		for (Die die : dice)
 			die.roll();

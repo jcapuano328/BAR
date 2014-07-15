@@ -80,23 +80,29 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:weightSum="1.0" android:paddingBottom="5dp" android:paddingTop="10dp">
-        <ImageView
-            android:id="@+id/imgFireDie1"
-            android:src="@drawable/whiteb10_0"
+        <TextView
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
             android:layout_weight="0.15"
-            android:layout_gravity="center"
-            android:clickable="true" />
-        <ImageView
-            android:id="@+id/imgFireDie2"
-            android:src="@drawable/redw10_0"
+            android:layout_height="50dp"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="0"
+            android:gravity="center"
+            android:background="@drawable/die10_white"
+            android:id="@+id/imgFireDie1"/>
+        <TextView
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
             android:layout_weight="0.15"
-            android:layout_gravity="center"
-            android:layout_toRightOf="@+id/imgFireDie1"
-            android:clickable="true" />
+            android:layout_height="50dp"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:text="0"
+            android:gravity="center"
+            android:background="@drawable/die10_red"
+            android:id="@+id/imgFireDie2"/>
+        
         <Button
             android:id="@+id/btnFireDiceRoll"
             android:text="Roll"

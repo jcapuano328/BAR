@@ -38,8 +38,8 @@ public class InitiativeFragment extends Fragment {
 	private Button btnAmericanMomentumNext;
 	private EditText editAmericanMomentum;
 
-	private ImageView imgInitiativeDie1;
-	private ImageView imgInitiativeDie2;
+	private TextView imgInitiativeDie1;
+	private TextView imgInitiativeDie2;
 	private Button btnInitiativeDiceRoll;
 
 	private TextView txtInitiativeResults;
@@ -82,8 +82,8 @@ public class InitiativeFragment extends Fragment {
 		    editAmericanMomentum = (EditText)rootView.findViewById(R.id.editAmericanMomentum);
 		    editAmericanMomentum.setText("0");
         
-		    imgInitiativeDie1 = (ImageView)rootView.findViewById(R.id.imgInitiativeDie1);
-		    imgInitiativeDie2 = (ImageView)rootView.findViewById(R.id.imgInitiativeDie2);
+		    imgInitiativeDie1 = (TextView)rootView.findViewById(R.id.imgInitiativeDie1);
+		    imgInitiativeDie2 = (TextView)rootView.findViewById(R.id.imgInitiativeDie2);
 		    btnInitiativeDiceRoll = (Button)rootView.findViewById(R.id.btnInitiativeDiceRoll);
 
             txtInitiativeResults = (TextView)rootView.findViewById(R.id.txtInitiativeResults);
@@ -147,7 +147,7 @@ public class InitiativeFragment extends Fragment {
 		    imgInitiativeDie1.setOnClickListener(new OnClickListener() {
 			    @Override
 			    public void onClick(View arg0) {
-                    dice.increment(1);
+                    dice.increment(0);
 			        displayDice();
 			        updateResults();
 			    }
@@ -155,7 +155,7 @@ public class InitiativeFragment extends Fragment {
 		    imgInitiativeDie2.setOnClickListener(new OnClickListener() {
 			    @Override
 			    public void onClick(View arg0) {
-                    dice.increment(2);
+                    dice.increment(1);
 			        displayDice();
 			        updateResults();
 			    }
@@ -183,8 +183,8 @@ public class InitiativeFragment extends Fragment {
 	}
 
 	void displayDice() {
-		imgInitiativeDie1.setImageResource(DiceResources.getWhiteBlack(dice.getDie(0)));
-		imgInitiativeDie2.setImageResource(DiceResources.getRedWhite(dice.getDie(1)));
+        imgInitiativeDie1.setText(Integer.toString(dice.getDie(0)));
+        imgInitiativeDie2.setText(Integer.toString(dice.getDie(1)));
 	}
  
 	int getBritishMomentum() {

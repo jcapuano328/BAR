@@ -2,9 +2,6 @@ package ica.BAR.Core;
 
 import java.util.Random;
 
-/**
- * Created by jcapuano on 5/16/2014.
- */
 public class Die {
 
 	private int rangelow;
@@ -12,8 +9,7 @@ public class Die {
 	private int value;
     private Random random = new Random();
 
-	public Die(int rangelo, int rangehi)
-	{
+	public Die(int rangelo, int rangehi) {
 		rangelow = rangelo;
 		rangehigh = rangehi;
 		value = rangelow;
@@ -41,8 +37,8 @@ public class Die {
 	}
 	
 	public int increment() {
-        return increment(true);
-    }
+		return increment(true);
+	}
 	public int increment(boolean rollover) {
         if (++value > rangehigh) {
             value = rollover ? rangelow : rangehigh;
@@ -51,8 +47,8 @@ public class Die {
 	}
 	
 	public int decrement() {
-        return decrement(true);
-    }
+		return decrement(true);
+	}
 	public int decrement(boolean rollover) {
         if (--value < rangelow) {
             value = rollover ? rangehigh : rangelow;
@@ -60,8 +56,7 @@ public class Die {
 		return value;
     }
 	
-	public int roll() {		
-        //value = rangelow + (int)(Math.random() * ((rangehigh - rangelow) + 1));
+	public int roll() {		        
         value = random.nextInt(rangehigh - rangelow) + rangelow;
 		
 		return value;
